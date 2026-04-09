@@ -7,7 +7,7 @@ import { IMAGES } from '@/data/images';
 export default function Gallery(){
     return(
         <>
-        <div className="py-15 md:py-18 px-5">
+        <div className="py-5 md:py-5 px-5">
             {/* Heading */}
             <h1 className="text-4xl md:text-5xl text-secondary font-bold text-center mb-8">
                 Gallery
