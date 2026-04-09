@@ -1,0 +1,15 @@
+UI Components and Icons**
+npm install @base-ui/react lucide-react hugeicons-react
+
+Stack Handling**
+npm install react-hook-form zod @hookform/resolvers
+
+Email Cmmunication**
+npm install resend @react-email/components @react-email/render
+
+Carousels and Animations**
+npm install embla-carousel-react embla-carousel-autoplay tw-animate-css
+
+
+shadcn**
+npx shadcn@latest init
