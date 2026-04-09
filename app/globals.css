@@ -107,6 +107,7 @@
     @apply border-border outline-ring/50;
     }
   body {
+    padding-top: 60px;
     @apply bg-background text-foreground;
     }
   html {
