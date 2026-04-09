@@ -64,12 +64,14 @@ export default function Navbar(){
                             </a>
                         </SheetTitle>
 
-                        <ul className="flex flex-col text-2xl gap-2">
+                        <ul className=" flex flex-col text-2xl gap-2">
                             {NAV_LINKS.map((link) => (
-                                <li key={link.name}>
-                                    <SheetClose>
+                                <li key={link.name}
+                                className=" justify-center"
+                                >
+                                    <SheetClose className=" w-full">
                                         <Link href={link.href}
-                                            className="h-15 flex items-center justify-center hover:text-primary transition-all"
+                                            className="h-15  flex items-center justify-center hover:text-primary transition-all"
                                         >
                                             {link.name}
                                         </Link>
