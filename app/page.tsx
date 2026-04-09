@@ -34,7 +34,7 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="h-screen flex flex-col items-center justify-center gap-5 pt-15 mb-10 relative">
+      <section className="h-screen flex flex-col items-center justify-center gap-5 pt-5 mb-10 relative">
         <Image 
             src="/images/73.jpeg"
             alt=""
