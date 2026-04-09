@@ -4,6 +4,103 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@theme inline {
+  /* Registering your custom Bake Shop colors */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Added your custom shop status colors */
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-error: var(--error);
+
+  /* Radius variables for shadcn components */
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+}
+
+:root {
+  /* The "Ali Bakes Cakes" Signature Palette */
+  --background: #fffaf8;       /* Very soft cream */
+  --foreground: #333333;       /* Off-black for readability */
+  
+  --card: #ffffff;
+  --card-foreground: #333333;
+  --popover: #ffffff;
+  --popover-foreground: #333333;
+  
+  --primary: #C21E56;          /* Deep Raspberry */
+  --primary-foreground: #ffffff;
+  
+  --secondary: #A64B4B;        /* Muted Strawberry/Brick */
+  --secondary-foreground: #ffffff;
+  
+  --muted: #E5DACE;            /* Almond */
+  --muted-foreground: #726A5F;
+  
+  --accent: #F1ECE6;           /* Champagne */
+  --accent-foreground: #A64B4B;
+  
+  --border: #D8D1C9;           /* Soft Taupe */
+  --input: #D8D1C9;
+  --ring: #C21E56;             /* Focus ring matches primary */
+
+  --success: #8DA06B;          /* Sage Green */
+  --warning: #C5A059;          /* Honey Gold */
+  --error: #A64B4B; 
+  --destructive: #941843;      /* Darker Berry */
+  --destructive-foreground: #ffffff;
+
+  --radius: 0.75rem;           /* Slightly rounder for a "bakery" feel */
+}
+
+/* Optional Dark Mode - swapping to deeper warm tones instead of pure black */
+.dark {
+  --background: #1a1513;
+  --foreground: #fefaf6;
+  --card: #251e1c;
+  --card-foreground: #fefaf6;
+  --popover: #251e1c;
+  --popover-foreground: #fefaf6;
+  --primary: #E84E82; 
+  --primary-foreground: #ffffff;
+  --secondary: #CC7373;
+  --secondary-foreground: #ffffff;
+  --muted: #3d342f;
+  --muted-foreground: #a3948a;
+  --accent: #2d2622;
+  --accent-foreground: #fefaf6;
+  --border: #3d342f;
+  --input: #3d342f;
+  --ring: #E84E82;
+}
 
 @layer base {
   * {
