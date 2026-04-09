@@ -13,3 +13,6 @@ npm install embla-carousel-react embla-carousel-autoplay tw-animate-css
 
 shadcn**
 npx shadcn@latest init
+
+shadcn components**
+npx shadcn@latest add button aspect-ratio card carousel input sheet textarea
