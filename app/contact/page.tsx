@@ -19,15 +19,25 @@ export default function ContactPage(){
 
     const [loading, setLoading] = useState(false);
 
+    // Status for messages
+    const [status,setStatus] = useState<{ type: 'success' | 'error' | null, message:string }>({
+        type: null,
+        message: ''
+    })
+
     const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { id, value } = e.target;
         // Use 'id' to match the state keys
         setFormData(prev => ({ ...prev, [id]: value }));
+
+        // Clear status when user starts typing again
+        if(status.type) setStatus({type:null,message:''});
     }
 
     const handleSubmit = async (e: FormEvent) => {
         e.preventDefault();
         setLoading(true);
+        setStatus({type:null,message:''});
 
         try {
             const response = await fetch('/api/send', {
@@ -39,12 +49,15 @@ export default function ContactPage(){
             const result = await response.json();
 
             if (response.ok) {
-                alert("Order request sent! Ali will get back to you soon.");
+                setStatus({type:'success',message:'Order request sent! Ali will get back to you soon.'})
                 setFormData({ firstName: '', lastName: '', email: '', phone: '', message: '' });
             } else {
-                alert(`Error: ${result.error?.message || "Something went wrong"}`);
+                setStatus({type:'error',
+                    message:result.error?.message || "Something went wrong"
+                });
             }
         } catch (err) {
+            setStatus({type:'error',message:'Network error. Please check your connection.'});
             alert("Network error. Please check your connection.");
         } finally {
             setLoading(false);
@@ -170,6 +183,15 @@ export default function ContactPage(){
                                 onChange={handleChange}
                             />
                         </div>
+
+                        {/* Status Popover */}
+                        {status.type && (
+                            <div className={`p-4 rounded-lg border border-border text-md text-center animate-in fade-in zoom-in duration-30 text-secondary-foreground font-bold ${
+                                status.type === 'success' ? 'bg-success ' : 'bg-error'
+                            }`}>
+                                {status.message}
+                            </div>
+                        )}
                         <div className="flex justify-center">
                             <Button type="submit"
                                 disabled={loading}
