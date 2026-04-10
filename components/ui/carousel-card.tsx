@@ -21,7 +21,7 @@ export default function CarouselCard({ title, path, image }: CarouselCardProps){
                         className='object-cover transition-transform duration-500 group-hover:scale-110'
                     />
                     <div className="absolute inset-0 flex flex-col items-center justify-end text-foreground font-bold">
-                        <h1 className="bg-secondary-foreground/90 w-full h-1/3 flex justify-center items-center text-2xl rounded-2xl">
+                        <h1 className="bg-secondary-foreground/85 text-primary w-full h-1/3 flex justify-center items-center text-2xl rounded-2xl">
                             {title}
                         </h1>
                     </div>
